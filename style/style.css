@@ -1,92 +1,32 @@
-/* Suaviza a rolagem */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Configurações gerais do body */
+/* Configurações Globais */
+html { scroll-behavior: smooth; }
 body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Evita rolagem horizontal */
-    overflow-y: auto; /* Permite rolagem vertical */
-    margin-top: 80px; /* Compensa a altura da barra fixa */
+    overflow-x: hidden;
+    font-family: sans-serif;
     scrollbar-width: none;
 }
+body::-webkit-scrollbar { display: none; }
 
-body::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem no Chrome, Edge e Safari */
-}
-
-html, body {
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove espaçamentos padrão */
-    width: 100%; /* Garante que ocupe toda a largura */
-    height: 100%; /* Garante que ocupe toda a altura */
-    overflow-x: hidden; /* Permite barra de rolagem horizontal quando necessário */
-    overflow-y: auto; /* Remove barra de rolagem vertical */
-}
-
-.title_prin{
+/* Barra de Navegação Fixa e Translúcida */
+.home {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 3rem;
-    gap: 1rem;
-    font-size: 1.6rem; /* Tamanho maior para o título principal */
-}
-
-/* Estilo para títulos */
-.title{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 3rem;
-    gap: 1rem;
-    font-size: 2rem; /* Tamanho padrão para títulos */
-}
-
-/* Configuração geral dos contêineres */
-.conteiner {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 0 1rem; /* Adiciona espaçamento interno */
-    gap: 1rem; /* Espaçamento entre os itens */
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
-}
-
-/* Barra de navegação fixa */
-/* .home {
-    display: flex;
+    padding: 0.5rem 2rem;
+    height: 70px;
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    flex-direction: row;
-    gap: 1rem;
-    padding: 0.5rem 1rem; 
     width: 100%;
-    height: 3rem;
-    z-index: 10;
-    background-color: transparent;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1.5px);
-} */
-
-/* --- Ajustes na Barra de Navegação --- */
-
-.home {
-    display: flex;
-    justify-content: space-between; /* Espaça os elementos */
-    align-items: center;
-    padding: 0.5rem 2rem;
-    height: 60px;
+    z-index: 1000;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-center {
@@ -95,174 +35,85 @@ html, body {
     gap: 10px;
 }
 
+#img01 { width: 50px; height: 50px; border-radius: 50%; }
+.acas { font-size: 1.2rem; font-weight: bold; margin: 0; }
 
-#grupo, #convivio, #sobre-nos, #formacoes {
-    padding-top: 4rem; /* Adiciona espaço acima da seção */
-}
-
-
-
-/* Navegação dentro da barra */
-nav {
-    display: flex;
-    gap: 2rem; /* Espaçamento entre os botões */
-}
-
-/* Botões da barra de navegação */
-.button{
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2);
+/* Navegação Desktop */
+nav { display: flex; gap: 1rem; }
+.button {
+    text-decoration: none;
     color: black;
-    padding: 0.8rem 1.5rem; /* Ajuste no espaçamento interno */
-    border-radius: 0.75rem;
-    font-size: 0.9rem; /* Tamanho reduzido para melhor ajuste */
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
     font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none; /* Remove sublinhado */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Adiciona uma borda sutil */
-    transition: all 0.3s ease; /* Suaviza interações */
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
 }
+.button:hover { background-color: rgba(255, 255, 255, 0.6); }
 
-/* Efeito hover nos botões */
-.button:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05); /* Aumenta levemente o botão */
-}
+.menu-toggle { display: none; font-size: 2rem; background: none; border: none; cursor: pointer; }
 
-/* Configuração da seção de início */
+/* Seções e Conteúdo */
 .Inicio {
-    display: flex;
-    align-items: left;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-}
-
-
-/* Configuração do conteúdo */
-.content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    gap: 1.5rem;
-}
-
-#insta{
-    width: 40px;
-    height: 40px;
-    border-radius: 34%;
-    margin-right: 0.5rem; /* Adiciona um pequeno espaçamento à direita da imagem */
-}
-
-/* Imagem de fundo */
-#img02 {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-/* Logo da barra de navegação */
-#img01 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 0.5rem; /* Adiciona um pequeno espaçamento à direita da imagem */
-}
-
-#img_config{
-    margin: 3rem ;
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-}
-
-
-/* Estilo do título "ACAS" */
-.acas {
-    font-size: 1.2rem; /* Ajusta o tamanho da fonte */
-    font-weight: bold; /* Deixa o texto em negrito */
-    margin: 0; /* Remove margens extras */
-    padding: 0; /* Remove espaçamentos extras */
-    justify-content: center;
-    gap: 0.1rem;
-}
-
-
-
-.ascom,.grupo_musica,.formacao, .liturgia {
+    height: 100vh;
     display: flex;
     align-items: center;
-    gap: 1rem;
-}
-
-.musica-text, .ascom-text, .formacao-text, .liturgia-text {
+    justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 3rem;
-}
-
-/* Esconde o botão hambúrguer no Computador */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
+    position: relative;
     color: black;
 }
+#img02 { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 
-/* --- Responsividade (Celular) --- */
+.conteiner {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.content { max-width: 1000px; text-align: center; }
+
+#img_config { width: 300px; border-radius: 10px; margin: 2rem; }
+
+/* Layout dos Grupos (Lado a Lado no PC) */
+.ascom, .grupo_musica, .formacao, .liturgia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Responsividade (Celular) */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Mostra as 3 barrinhas */
-        order: 1;
-    }
-
-    .logo-center {
-        order: 2;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%); /* Centraliza perfeitamente no meio */
-    }
-
-    /* Estilo do menu suspenso no celular */
+    .menu-toggle { display: block; order: 1; }
+    .logo-center { order: 2; position: absolute; left: 50%; transform: translateX(-50%); }
+    
     nav {
-        display: none; /* Esconde o menu por padrão */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 70px;
         left: 0;
         width: 100%;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
         padding: 1rem;
-        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-        z-index: 100;
-        gap: 10px !important;
+        box-sizing: border-box;
     }
 
-    /* Classe que o JavaScript vai adicionar para abrir o menu */
-    nav.active {
-        display: flex;
-    }
+    nav.active { display: flex; }
 
-    .button {
-        width: 100%; /* Botões ocupam a largura toda no celular */
+    /* Empilhar imagens e textos no celular */
+    .ascom, .grupo_musica, .formacao, .liturgia {
+        flex-direction: column !important;
         text-align: center;
     }
+    
+    #img_config { width: 90%; margin: 1rem 0; }
+    .title_prin { font-size: 1.2rem; }
 }
