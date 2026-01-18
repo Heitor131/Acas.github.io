@@ -1,4 +1,4 @@
-/* Configurações Globais */
+/* --- CONFIGURAÇÕES GLOBAIS --- */
 html { scroll-behavior: smooth; }
 body {
     margin: 0;
@@ -7,10 +7,11 @@ body {
     overflow-x: hidden;
     font-family: sans-serif;
     scrollbar-width: none;
+    margin-top: 70px; /* Ajuste para o conteúdo não iniciar sob a barra fixa */
 }
 body::-webkit-scrollbar { display: none; }
 
-/* Barra de Navegação Fixa e Translúcida */
+/* --- BARRA DE NAVEGAÇÃO (FIXA E TRANSLÚCIDA) --- */
 .home {
     display: flex;
     justify-content: space-between;
@@ -38,7 +39,7 @@ body::-webkit-scrollbar { display: none; }
 #img01 { width: 50px; height: 50px; border-radius: 50%; }
 .acas { font-size: 1.2rem; font-weight: bold; margin: 0; }
 
-/* Navegação Desktop */
+/* NAVEGAÇÃO DESKTOP */
 nav { display: flex; gap: 1rem; }
 .button {
     text-decoration: none;
@@ -55,7 +56,7 @@ nav { display: flex; gap: 1rem; }
 
 .menu-toggle { display: none; font-size: 2rem; background: none; border: none; cursor: pointer; }
 
-/* Seções e Conteúdo */
+/* --- SEÇÕES E CONTEÚDO --- */
 .Inicio {
     width: 100%;
     height: 100vh;
@@ -66,7 +67,7 @@ nav { display: flex; gap: 1rem; }
     position: relative;
     color: black;
 }
-#img02 { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+#img02 { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; top: 0; left: 0; }
 
 .conteiner {
     padding: 4rem 1rem;
@@ -76,22 +77,39 @@ nav { display: flex; gap: 1rem; }
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.content { max-width: 1000px; text-align: center; }
+.content { max-width: 1000px; text-align: center; width: 100%; }
 
-#img_config { width: 300px; border-radius: 10px; margin: 2rem; }
-
-/* Layout dos Grupos (Lado a Lado no PC) */
+/* --- LAYOUT DOS GRUPOS (LADO A LADO NO PC) --- */
 .ascom, .grupo_musica, .formacao, .liturgia {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    gap: 2rem;
 }
 
-/* Responsividade (Celular) */
+.musica-text, .ascom-text, .formacao-text, .liturgia-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: left; /* No PC o texto fica alinhado conforme o layout */
+}
+
+#img_config { 
+    width: 300px; 
+    border-radius: 10px; 
+    flex-shrink: 0;
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 768px) {
     .menu-toggle { display: block; order: 1; }
-    .logo-center { order: 2; position: absolute; left: 50%; transform: translateX(-50%); }
+    
+    .logo-center { 
+        order: 2; 
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
     
     nav {
         display: none; 
@@ -104,16 +122,37 @@ nav { display: flex; gap: 1rem; }
         backdrop-filter: blur(10px);
         padding: 1rem;
         box-sizing: border-box;
+        gap: 10px;
     }
 
     nav.active { display: flex; }
 
-    /* Empilhar imagens e textos no celular */
+    /* AJUSTE DOS GRUPOS NO CELULAR */
     .ascom, .grupo_musica, .formacao, .liturgia {
         flex-direction: column !important;
         text-align: center;
+        gap: 1.5rem;
+    }
+
+    /* Força a imagem a ficar no topo e o texto embaixo */
+    .ascom img, .grupo_musica img, .formacao img, .liturgia img {
+        order: 1 !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    .musica-text, .ascom-text, .formacao-text, .liturgia-text {
+        order: 2 !important;
+        text-align: center !important;
+        max-width: 100%;
+        margin: 0 !important;
+    }
+
+    #img_config { 
+        width: 90%; 
+        margin: 1rem 0; 
     }
     
-    #img_config { width: 90%; margin: 1rem 0; }
     .title_prin { font-size: 1.2rem; }
 }
