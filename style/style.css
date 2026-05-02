@@ -92,6 +92,7 @@ nav { display: flex; gap: 1rem; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center; /* ← ADICIONA ISSO */
 }
 
 .tema {
@@ -106,18 +107,23 @@ nav { display: flex; gap: 1rem; }
     width: 90%;
     margin: 1rem auto;
     align-items: stretch;
+    justify-content: center; /* ← ADICIONA ISSO */
 }
 
 .card_text {
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.5rem 2rem; /* ← aumenta padding lateral */
     flex: 1;
+    max-width: 800px;     /* ← limita a largura no desktop */
     border: 2px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    text-align: left;     /* ← texto dentro do card alinhado à esquerda */
 }
+
+
 .card_foto {
     border-radius: 12px;
     overflow: hidden;
