@@ -6,7 +6,11 @@
     <title>ACAS</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="icon" href="img/WhatsApp Image 2025-04-03 at 18.54.52.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="home">
         <button class="menu-toggle" id="menu-toggle">&#9776;</button>
@@ -19,10 +23,11 @@
         <nav id="nav-menu">
             <a href="#Inicio_in" class="button">Inicio</a>
             <a href="#sobre-nos" class="button">Sobre nós</a>
-            <a href="#formacoes" class="button">formações</a>
-            <a href="#convivio" class="button">Convivio</a>
+            <a href="#formacoes" class="button">Formação</a>
+            <!-- <a href="#convivio" class="button">Convivio</a> -->
             <a href="#grupo" class="button">Grupo de serviço</a>
-            <a href="#outras" class="button">Outras programações</a>
+            <a href="" class="button" onclick="alert('Em Breve')">Programação</a>
+            <a href="" class="button" onclick="alert('Em Breve')">Login</a>
             <a href="https://www.instagram.com/acasoficial?igsh=MXJldzM5dnlramoycg==" class="button">Instagram</a>
         </nav>
     </header>
@@ -38,41 +43,120 @@
     <div id="sobre-nos" class="conteiner">
         <h1 class="title">Sobre nós</h1>
         <div class="content">
-            <p>A ACAS vem há 25 anos com o objetivo de Adorar o santíssimo e anunciar o amor que brota da Eucaristia</p>
+            <p>ACAS – Associação Católica Adoremos o Senhor é uma associação de cristãos da Igreja Católica Apostólica Romana, vinculada à Arquidiocese de Belém do Pará. Com raízes fincadas em setembro de 1998, quando nasceu com o nome de Associação Convívio da Juventude, a ACAS recebeu sua identidade atual e sua bênção oficial em 15 de outubro de 2003, pelas mãos de Dom Vicente Joaquim Zico, arcebispo de Belém.</p>
+
+        <p>
+            Ao longo de 25 anos de história, acolhemos jovens, famílias e pessoas de todas as idades que buscam um encontro verdadeiro com Cristo vivo na Eucaristia. Nascemos do desejo de adorar o Senhor e de anunciar, com vida e palavra, o amor extraordinário que brota do Santíssimo Sacramento.
+        </p>
+
+        <p>Hoje, nossa associação se encontra no coração de Belém, na Rua dos Mundurucus, 3630, acolhida pelo Convento Betânia das irmãs da Congregação das Filhas da Imaculada Conceição – providência que enxergamos como sinal concreto da fidelidade de Deus ao longo de nossa caminhada.</p>
         </div>
     </div>
 
-    <div id="formacoes" class="conteiner">
-        <h1 class="title">Formações</h1>
-        <div class="content">
-            <h2>Vinde e vede</h2>
-            <p>Introdução ao conhecimento da fé católica abordando o Credo e os Sacramentos.<br> <br> <strong>Primeiro módulo do caminho formativo da Acas.</strong></p>
+    <div id="formacoes" class="conteiner_formacao">
+        <h1 class="title">Formação</h1>
+        <div class="conteudo">
+            <div class="card_text">
+                <h2 class="tema">OS TÍTULOS MARIANOS</h2>
+                <h3>• Por que Maria tem tantos nomes?</h3>
+                <p>Você já se pegou pensando se Nossa Senhora Aparecida e Nossa Senhora de Fátima são pessoas diferentes? Ou talvez já tenha ouvido alguém dizer que tem mais devoção a uma do que a outra, como se fossem pessoas distintas?
+                    Para começarmos nossa conversa, precisamos deixar algo bem claro: Maria é única. Seja no Brasil, em Portugal, no México ou na França, quando dizemos "Nossa Senhora", estamos nos referindo à mesmíssima pessoa: Maria de Nazaré, a mãe de Jesus. O que muda é apenas a forma como a chamamos, o que a Igreja denomina como Títulos Marianos.
+                </p>
+                <h3>• Uma Mãe, muitos nomes</h3>
+                <p>Para entender melhor sobre os títulos marianos, você pode imaginar uma mãe de família. Para o seu filho, ela é "mamãe". Para o seu marido, ela é "esposa". Para os seus alunos, ela é a "professora". No trabalho, ela usa um uniforme; em casa, uma roupa confortável; em uma festa, um vestido elegante. As roupas e os nomes mudam conforme o lugar e a situação, mas a pessoa debaixo do traje continua sendo exatamente a mesma.
+                    Com Maria acontece algo semelhante. No alto da Cruz, Jesus nos entregou o Seu bem mais precioso: "Mulher, eis aí o teu filho... Eis aí a tua mãe" (Jo 19, 26-27). A partir dali, ela assumiu a maternidade de toda a humanidade. Para se aproximar de seus filhos ao redor do mundo, ela se apresenta de formas que geram identificação e pertencimento, refletindo muitas vezes as características do povo local.
+                </p>
+                    Esses títulos são formas carinhosas de nos referirmos a ela e são classificados pela Igreja em três tipos principais:
+                <ol>
+                    <li><strong>Títulos Geográficos:</strong>
+                        <p>Estão ligados ao lugar onde Maria apareceu ou onde sua devoção se consolidou. É Maria "falando a língua" de seus filhos em cada canto do mundo.</p>
+                        <ul>
+                            <li><strong>Exemplo:</strong><strong>Nossa Senhora de Guadalupe</strong>, que no México se manifestou com traços indígenas ao jovem Juan Diego; e <strong>Nossa Senhora de Fátima</strong>, que em Portugal trouxe mensagens de oração e conversão aos três pastorinhos.</li>
+                        </ul>
+                    </li>
 
-            <h2>Buscai o alto</h2>
-            <p>Buscar ajudar a trilhar uma jornada rumo ao céu por meio do autoconhecimento, ordenamento de si para o amor, vida de oração e de reconhecimento da identidade como filhos de Deus para bem viver as virtudes. <br><br> <strong>Segundo módulo do caminho formativo da Acas</strong></p>
+                    <li><strong>Títulos de Devoção:</strong>
+                        <p>Esses títulos nascem da fé popular e de experiências específicas de intercessão. Eles celebram uma virtude de Maria ou um auxílio que ela prestou em um momento de aflição.</p>
+                        <ul>
+                            <li><strong>Exemplo:</strong><strong>Nossa Senhora Aparecida</strong>, a padroeira do Brasil, cuja imagem foi encontrada nas águas e se tornou símbolo de esperança para o nosso povo; e <strong>Nossa Senhora das Graças</strong>, associada à promessa de auxílio àqueles que pedem sua intercessão com confiança.</li>
+                        </ul>
+                    </li>
 
-            <h2>Obra</h2>
-            <p>Grupo daqueles que passaram por todo o caminho formativo da comunidade e realizam as obras de Deus nas atividades dentro da Acas e na sua vocação.</p>
+                    <li><strong>Títulos Dogmáticos:</strong> 
+                        <p>Estes são os títulos mais profundos, pois derivam dos <strong>Dogmas Marianos</strong>— verdades de fé definitivas proclamadas pela Igreja sobre o papel de Maria na história da Salvação. São eles:</p>
+                        <ul>
+                            <li><strong>Maria, Mãe de Deus (Theotokos):</strong> 
+                            Definido no Concílio de Éfeso (431), este dogma afirma que Maria não gerou apenas a humanidade de Jesus, mas a <strong>Pessoa</strong> de Jesus, que é verdadeiro Deus e verdadeiro homem. Se Jesus é Deus, Maria é Mãe de Deus.
+                            </li>
 
-            <h2>Kairós</h2>
-            <p>Etapa formativa necessária para um disernimento no qual há um aprofundamento sobre a história da Acas, espiritualidade, missões do carisma e santos baluartes.</p>
+                            <li><strong>Sempre Virgem Maria:</strong>
+                            É a verdade de que Maria permaneceu virgem antes, durante e depois do parto. Este dogma fundamenta a entrega total e exclusiva de Maria ao projeto de Deus, sendo ela o modelo da própria Igreja, que se consagra inteiramente ao seu Senhor.
+                            </li>
+
+                            <li><strong>Imaculada Conceição:</strong>
+                            Proclamado em 1854, ensina que Maria foi preservada da mancha do pecado original desde o primeiro instante de sua concepção. Deus a preparou como um tabernáculo digno e puro para receber o Seu Filho, antecipando nela a graça da redenção.
+                            </li>
+
+                            <li><strong>Assunção de Maria:</strong>
+                                Proclamado em 1950, declara que, ao fim de sua vida terrena, Maria foi elevada de corpo e alma à glória do Céu. Como ela não possuía pecado, seu corpo não conheceu a corrupção da morte, antecipando a ressurreição que todos nós esperamos.
+                            </li>
+
+                            <li><strong>O olhar que aponta para o Filho</strong></li>
+                            <p>Agora, fica fácil entender por que Nossa Senhora das Graças é a mesma pessoa que Nossa Senhora de Nazaré ou de Guadalupe. São apenas olhares diferentes para a mesma face materna. Maria não guarda nenhum título para si; ela é como um espelho que reflete a luz de Jesus.</p>
+                            <p>
+                                Como nos ensina o Catecismo da Igreja Católica:
+                            </p>
+
+                            <div class="citacao">
+                                "Seu papel em relação à Igreja e a toda a humanidade vai ainda mais longe.
+                                De modo inteiramente singular, pela obediência, fé, esperança e ardente caridade, 
+                                ela cooperou na obra do Salvador para a restauração da vida sobrenatural das almas. 
+                                Por este motivo, ela se tornou para nós mãe na ordem da graça." (CIC 968)
+                            </div>
+
+                            <p>
+                                Independentemente da devoção que toca mais forte o seu coração, todos esses títulos são janelas para a mesma realidade: a presença materna de Maria. Ela é a Mãe de Deus e nossa, que sob diversos nomes, aponta para uma única direção: o Cristo, nosso Senhor.
+                            </p>
+                        </ul>
+
+                    </li>
+                </ol>
+            </div>
+
+            <div class="card_foto"></div>
         </div>
+        
     </div>
 
-    <div id="convivio" class="conteiner">
+    <!-- <div id="convivio" class="conteiner">
         <h1 class="title">Convívio</h1>
         <div class="content">
             <p>O convívio nos possibilita momentos muito especiais de união e espiritualidade.</p>
         </div>
-    </div>
+    </div> -->
 
     <div id="grupo" class="conteiner">
         <h1 class="title">Grupos de serviço</h1>
         <div class="content">
+
+            <div class="liturgia">
+                <img src="img/liturgia.jpeg" alt="liturgia" id="img_config">
+                <div class="liturgia-text">
+                    <h2>Liturgia</h2>
+                    <p>A liturgia não é apenas um conjunto de ritos e cerimônias. Ela é a oração oficial da Igreja, o espaço sagrado onde a comunidade se encontra com o Deus vivo e, ao mesmo tempo, se reconhece como Povo de Deus. Numa comunidade como a ACAS, a liturgia ocupa um lugar central: é o solo fértil de onde brotam todos os ministérios, o encontro e o envio.</p>
+
+                    <p>Quando nos reunimos para adorar, celebrar ou louvar, não estamos praticando um costume cultural — estamos participando de uma ação divina que transcende o tempo e o espaço. A liturgia nos une ao sacrifício de Cristo, nos alimenta com Sua Palavra e Seu Corpo, e nos manda de volta ao mundo como testemunhas do Amor.</p>
+
+                    <p>Para que essa experiência seja verdadeira, bela e transformadora, cada ministério tem uma função insubstituível. A comunicação que prepara e anuncia, a música que eleva o coração, a formação que aprofunda a fé — todos são braços do mesmo Corpo, servindo a uma única missão litúrgica.</p>
+                </div>
+            </div>
+
             <div class="grupo_musica">
                 <div class="musica-text">
                     <h2>Grupo de Música</h2>
-                    <p>Serve ao carisma em ações ordinárias e extraordinárias...<br><br><strong>Principais ações:</strong> musicalmente as programações espirituais e missionárias...</p> 
+                    <p>O grupo de músicas eleva o que as palavras não alcançam. O canto litúrgico não é um ornamento: é parte essencial da celebração, que conduz a alma à contemplação.</p>
+
+                    <p>São Pedro Julião Eymard ensinava que a música na adoração deve criar silêncio interior — um silêncio habitado por Deus.</p> 
                 </div>
                 <img src="img/musica.png" alt="Grupo de Música" id="img_config">
             </div>
@@ -81,28 +165,26 @@
                 <img src="img/ascomm.png" alt="Ascom" id="img_config">
                 <div class="ascom-text">
                     <h2>Ascom</h2>
-                    <p>A Assessoria de Comunicação assegura a comunicação interna e apresenta a Associação através dos meios de comunicação.</p>
+                    <p>A ASCOM é a voz e o rosto da comunidade no mundo. Seu serviço começa muito antes de qualquer celebração e continua muito depois dela.</p>
+
+                    <p>No contexto litúrgico, a comunicação prepara corações: convoca, informa, contextualiza e evangeliza por meio de todos os canais disponíveis.</p>
                 </div>
             </div>
 
             <div class="formacao" >
                 <div class="formacao-text" >
                     <h2 class="title">Grupo de Formação</h2>
-                    <p>Serve ao carisma, por meio da formação dos seus membros...<br><br><strong>Principais ações:</strong> Conduzir as formações internas...</p>
+                    <p>A formação garante que a liturgia não seja apenas frequentada, mas compreendida e vivida. O fiel formado participa com consciência, fé e fruto.</p>
+
+                    <p>Sem formação, a liturgia corre o risco de tornar-se hábito vazio. Com ela, cada gesto e palavra se ilumina com sentido eterno.</p>
                 </div>
                 <img src="img/formaçao.jpeg" alt="grupo de formacao" id="img_config">
             </div>
 
-            <div class="liturgia">
-                <img src="img/liturgia.jpeg" alt="liturgia" id="img_config">
-                <div class="liturgia-text">
-                    <h2>Liturgia</h2>
-                    <p>Servir ao carisma por meio do zelo eucarístico e da organização litúrgica.</p>
-                </div>
-            </div>
+            
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/script/script.js"></script>
 </body>
 </html>

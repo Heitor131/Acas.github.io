@@ -7,7 +7,7 @@ body {
     overflow-x: hidden;
     font-family: sans-serif;
     scrollbar-width: none;
-    margin-top: 70px; /* Ajuste para o conteúdo não iniciar sob a barra fixa */
+    margin-top: 70px;
 }
 body::-webkit-scrollbar { display: none; }
 
@@ -65,7 +65,8 @@ nav { display: flex; gap: 1rem; }
     justify-content: center;
     text-align: center;
     position: relative;
-    color: black;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 #img02 { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; top: 0; left: 0; }
 
@@ -79,6 +80,62 @@ nav { display: flex; gap: 1rem; }
 
 .content { max-width: 1000px; text-align: center; width: 100%; }
 
+/* --- FORMAÇÃO --- */
+.conteiner_formacao {
+    background-color: rgb(234, 193, 103);
+    border-radius: 12px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tema {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.conteudo {
+    display: flex;
+    gap: 2rem;
+    width: 90%;
+    margin: 1rem auto;
+    align-items: stretch;
+}
+
+.card_text {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card_foto {
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 300px;
+    flex: 1;
+}
+
+.card_foto:empty {
+    display: none;
+}
+
+.card_foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* --- LAYOUT DOS GRUPOS (LADO A LADO NO PC) --- */
 .ascom, .grupo_musica, .formacao, .liturgia {
     display: flex;
@@ -91,7 +148,7 @@ nav { display: flex; gap: 1rem; }
 .musica-text, .ascom-text, .formacao-text, .liturgia-text {
     flex: 1;
     max-width: 500px;
-    text-align: left; /* No PC o texto fica alinhado conforme o layout */
+    text-align: left;
 }
 
 #img_config { 
@@ -134,7 +191,6 @@ nav { display: flex; gap: 1rem; }
         gap: 1.5rem;
     }
 
-    /* Força a imagem a ficar no topo e o texto embaixo */
     .ascom img, .grupo_musica img, .formacao img, .liturgia img {
         order: 1 !important;
         width: 100% !important;
@@ -153,6 +209,36 @@ nav { display: flex; gap: 1rem; }
         width: 90%; 
         margin: 1rem 0; 
     }
-    
+
     .title_prin { font-size: 1.2rem; }
+
+    /* FORMAÇÃO NO CELULAR */
+    .conteiner_formacao {
+        width: 95%;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .conteudo {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .card_foto {
+        max-height: 250px;
+    }
+    
+}
+
+    /* --- TIPOGRAFIA --- */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif !important;
+    letter-spacing: 0.5px;
+}
+
+.acas {
+    font-family: 'Playfair Display', serif !important;
+}
+
+body, p, a, li, .button {
+    font-family: 'Lato', sans-serif !important;
 }
