@@ -1,17 +1,41 @@
+/* ================================================
+   ACAS — style.css
+   Versão atualizada com melhorias visuais
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
 /* --- CONFIGURAÇÕES GLOBAIS --- */
 html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
     scrollbar-width: none;
     margin-top: 70px;
+    background-color: #faf6ee;
 }
+
 body::-webkit-scrollbar { display: none; }
 
-/* --- BARRA DE NAVEGAÇÃO (FIXA E TRANSLÚCIDA) --- */
+/* --- TIPOGRAFIA GLOBAL --- */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+}
+
+.acas {
+    font-family: 'Playfair Display', serif;
+}
+
+body, p, a, li, .button {
+    font-family: 'Lato', sans-serif;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
 .home {
     display: flex;
     justify-content: space-between;
@@ -24,10 +48,11 @@ body::-webkit-scrollbar { display: none; }
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(184, 147, 58, 0.2);
+    border-bottom: 1px solid rgba(184, 147, 58, 0.15);
 }
 
 .logo-center {
@@ -36,27 +61,53 @@ body::-webkit-scrollbar { display: none; }
     gap: 10px;
 }
 
-#img01 { width: 50px; height: 50px; border-radius: 50%; }
-.acas { font-size: 1.2rem; font-weight: bold; margin: 0; }
+#img01 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(184, 147, 58, 0.3);
+}
 
-/* NAVEGAÇÃO DESKTOP */
-nav { display: flex; gap: 1rem; }
+.acas {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #2C1A0E;
+}
+
+/* --- NAVEGAÇÃO DESKTOP --- */
+nav { display: flex; gap: 0.2rem; }
+
 .button {
     text-decoration: none;
-    color: black;
-    padding: 0.6rem 1rem;
-    border-radius: 0.5rem;
+    color: #2C1A0E;
+    padding: 0.5rem 0.9rem;
     font-weight: 600;
-    font-size: 0.9rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: 0.3s;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    transition: color 0.25s, border-color 0.25s;
 }
-.button:hover { background-color: rgba(255, 255, 255, 0.6); }
 
-.menu-toggle { display: none; font-size: 2rem; background: none; border: none; cursor: pointer; }
+.button:hover {
+    color: #B8933A;
+    border-bottom: 2px solid #B8933A;
+    background-color: transparent;
+}
 
-/* --- SEÇÕES E CONTEÚDO --- */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2C1A0E;
+}
+
+/* --- SEÇÃO INÍCIO (HERO) --- */
 .Inicio {
     width: 100%;
     height: 100vh;
@@ -66,33 +117,104 @@ nav { display: flex; gap: 1rem; }
     text-align: center;
     position: relative;
     color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-#img02 { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; top: 0; left: 0; }
 
+#img02 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    filter: brightness(0.75);
+}
+
+/* Caixa de vidro sobre o hero */
+.Inicio > div {
+    background: rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 2.5rem 3.5rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    max-width: 680px;
+}
+
+.title_prin {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.title_prin + p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    margin-top: 0.5rem;
+}
+
+/* --- SEÇÃO SOBRE NÓS --- */
 .conteiner {
-    padding: 4rem 1rem;
+    padding: 5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(180deg, #ffffff 0%, #faf6ee 100%);
 }
 
-.content { max-width: 1000px; text-align: center; width: 100%; }
+.content {
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #3E2910;
+    margin-bottom: 1rem;
+}
+
+/* --- TÍTULOS DAS SEÇÕES --- */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2C1A0E;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+/* Linha dourada após títulos */
+.title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: #B8933A;
+    border-radius: 2px;
+    margin: 8px auto 1.5rem;
+}
 
 /* --- FORMAÇÃO --- */
 .conteiner_formacao {
-    background-color: rgb(234, 193, 103);
-    border-radius: 12px;
+    background: linear-gradient(135deg, #eacc6a 0%, #c9a040 100%);
+    border-radius: 14px;
     width: 80%;
     max-width: 1000px;
     margin: 2rem auto;
-    padding: 2rem 1rem;
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* ← ADICIONA ISSO */
+    box-shadow: 0 6px 28px rgba(184, 147, 58, 0.22);
+    text-align: center;
 }
 
 .tema {
@@ -101,28 +223,83 @@ nav { display: flex; gap: 1rem; }
     display: flex;
 }
 
+/* Tag "Tema da semana" */
+.conteiner_formacao .title::before {
+    content: 'Tema da semana';
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7a5210;
+    margin-bottom: 6px;
+}
+
 .conteudo {
     display: flex;
     gap: 2rem;
     width: 90%;
     margin: 1rem auto;
     align-items: stretch;
-    justify-content: center; /* ← ADICIONA ISSO */
+    justify-content: center;
 }
 
 .card_text {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.88);
     border-radius: 12px;
-    padding: 1.5rem 2rem; /* ← aumenta padding lateral */
+    padding: 2rem 2.5rem;
     flex: 1;
-    max-width: 800px;     /* ← limita a largura no desktop */
-    border: 2px solid black;
+    max-width: 800px;
+    border: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    text-align: left;     /* ← texto dentro do card alinhado à esquerda */
+    text-align: left;
+    box-shadow: 0 2px 12px rgba(44, 26, 14, 0.1);
 }
 
+.card_text h2 {
+    font-size: 1.4rem;
+    color: #2C1A0E;
+    margin-bottom: 1.2rem;
+}
+
+.card_text h3 {
+    font-size: 1rem;
+    color: #5C3D1E;
+    margin: 1rem 0 0.4rem;
+}
+
+.card_text p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #3E2910;
+}
+
+.card_text ol {
+    padding-left: 1.2rem;
+    color: #3E2910;
+    font-size: 0.95rem;
+    line-height: 1.85;
+}
+
+.card_text li {
+    margin-bottom: 0.6rem;
+}
+
+/* Citação dentro do card */
+.citacao {
+    border-left: 3px solid #B8933A;
+    padding: 0.8rem 1.2rem;
+    margin: 1rem 0;
+    background: rgba(184, 147, 58, 0.08);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #5C3D1E;
+    font-size: 0.93rem;
+    line-height: 1.8;
+}
 
 .card_foto {
     border-radius: 12px;
@@ -131,9 +308,7 @@ nav { display: flex; gap: 1rem; }
     flex: 1;
 }
 
-.card_foto:empty {
-    display: none;
-}
+.card_foto:empty { display: none; }
 
 .card_foto img {
     width: 100%;
@@ -142,13 +317,43 @@ nav { display: flex; gap: 1rem; }
     display: block;
 }
 
-/* --- LAYOUT DOS GRUPOS (LADO A LADO NO PC) --- */
+/* --- GRUPOS DE SERVIÇO --- */
 .ascom, .grupo_musica, .formacao, .liturgia {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 4rem;
-    gap: 2rem;
+    margin-bottom: 3rem;
+    gap: 2.5rem;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    border: 0.5px solid rgba(184, 147, 58, 0.2);
+    box-shadow: 0 4px 20px rgba(44, 26, 14, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ascom:hover, .grupo_musica:hover, .formacao:hover, .liturgia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(44, 26, 14, 0.13);
+}
+
+/* Tag "Ministério" nos grupos */
+.musica-text::before,
+.ascom-text::before,
+.formacao-text::before,
+.liturgia-text::before {
+    content: 'Ministério';
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a6a28;
+    background: rgba(184, 147, 58, 0.12);
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-bottom: 10px;
 }
 
 .musica-text, .ascom-text, .formacao-text, .liturgia-text {
@@ -157,44 +362,83 @@ nav { display: flex; gap: 1rem; }
     text-align: left;
 }
 
-#img_config { 
-    width: 300px; 
-    border-radius: 10px; 
+.musica-text h2, .ascom-text h2,
+.formacao-text h2, .liturgia-text h2 {
+    font-size: 1.5rem;
+    color: #2C1A0E;
+    margin-bottom: 0.8rem;
+}
+
+.musica-text p, .ascom-text p,
+.formacao-text p, .liturgia-text p {
+    font-size: 0.97rem;
+    line-height: 1.85;
+    color: #5C3D1E;
+    margin-bottom: 0.6rem;
+}
+
+#img_config {
+    width: 300px;
+    border-radius: 12px;
     flex-shrink: 0;
+    object-fit: cover;
+    border: 3px solid rgba(184, 147, 58, 0.15);
 }
 
 /* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 768px) {
+
     .menu-toggle { display: block; order: 1; }
-    
-    .logo-center { 
-        order: 2; 
-        position: absolute; 
-        left: 50%; 
-        transform: translateX(-50%); 
+
+    .logo-center {
+        order: 2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    
+
     nav {
-        display: none; 
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(10px);
         padding: 1rem;
         box-sizing: border-box;
-        gap: 10px;
+        gap: 4px;
+        border-bottom: 1px solid rgba(184, 147, 58, 0.2);
     }
 
     nav.active { display: flex; }
 
-    /* AJUSTE DOS GRUPOS NO CELULAR */
+    .button {
+        border-bottom: none;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+    }
+
+    .button:hover {
+        border-bottom: none;
+        background-color: rgba(184, 147, 58, 0.1);
+    }
+
+    /* Hero no celular */
+    .Inicio > div {
+        padding: 1.8rem 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .title_prin { font-size: 1.4rem; }
+
+    /* Grupos no celular */
     .ascom, .grupo_musica, .formacao, .liturgia {
         flex-direction: column !important;
         text-align: center;
         gap: 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .ascom img, .grupo_musica img, .formacao img, .liturgia img {
@@ -211,17 +455,23 @@ nav { display: flex; gap: 1rem; }
         margin: 0 !important;
     }
 
-    #img_config { 
-        width: 90%; 
-        margin: 1rem 0; 
+    .musica-text::before,
+    .ascom-text::before,
+    .formacao-text::before,
+    .liturgia-text::before {
+        display: block;
+        text-align: center;
     }
 
-    .title_prin { font-size: 1.2rem; }
+    #img_config {
+        width: 90%;
+        margin: 0.5rem auto;
+    }
 
-    /* FORMAÇÃO NO CELULAR */
+    /* Formação no celular */
     .conteiner_formacao {
         width: 95%;
-        padding: 1.5rem 0.5rem;
+        padding: 1.5rem 0.8rem;
     }
 
     .conteudo {
@@ -229,22 +479,12 @@ nav { display: flex; gap: 1rem; }
         width: 95%;
     }
 
-    .card_foto {
-        max-height: 250px;
+    .card_foto { max-height: 220px; }
+
+    .card_text {
+        padding: 1.2rem 1rem;
     }
-    
-}
 
-    /* --- TIPOGRAFIA --- */
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif !important;
-    letter-spacing: 0.5px;
-}
-
-.acas {
-    font-family: 'Playfair Display', serif !important;
-}
-
-body, p, a, li, .button {
-    font-family: 'Lato', sans-serif !important;
+    /* Seções gerais */
+    .conteiner { padding: 3.5rem 1rem; }
 }
